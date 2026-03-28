@@ -1,0 +1,47 @@
+@import "tailwindcss"; /* The new v4 way to pull in all styles */
+
+@theme {
+  --color-neon-indigo: #6366f1;
+  --color-neon-purple: #a855f7;
+  --color-deep-bg: #020408;
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    background-color: var(--color-deep-bg);
+    color: theme('colors.slate.200'); /* Use theme function to avoid @apply errors */
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Your Futuristic Components */
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-primary {
+    background-color: var(--color-neon-indigo);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
