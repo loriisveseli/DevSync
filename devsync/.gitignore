@@ -1,0 +1,11 @@
+# Secret keys
+.env
+.env.local
+
+# Folders we don't need to save
+node_modules/
+dist/
+.DS_Store
+
+# Logs
+npm-debug.log*
